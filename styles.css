@@ -1,0 +1,246 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+
+/* To-Do App */
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background-color: #fff;
+    margin: 50px auto 20px;
+    padding: 20px 15px 50px;
+    border-radius: 10px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header div {
+    flex: 1;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.search button {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    background: #ebe8e8;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.header h2 {
+    color: #e45757;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.header img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+/* Row */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.row input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.row button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+/* List Container */
+.list-container li {
+    list-style: none;
+    font-size: 16px;
+    padding: 10px 10px 10px 40px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.list-container li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(r1.png);
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.list-container li.checked {
+    color: #d10c0c;
+    text-decoration: line-through;
+}
+
+.list-container li.checked::before {
+    background-image: url(r2.png);
+}
+
+.list-container li span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.list-container li span:hover {
+    background: #edeef0;
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    z-index: 10;
+}
+
+.buttons-container button {
+    display: block;
+    width: 100%;
+    background: #f9f9f9;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.buttons-container button:hover {
+    background: #e6e6e6;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none !important;
+}
+
+/* Three Dots */
+.three-dots {
+    cursor: pointer;
+    font-size: 24px;
+    position: relative;
+    padding: 0 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .todo-app {
+        max-width: 90%;
+        padding: 20px 10px;
+    }
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header div {
+        padding-left: 0;
+        text-align: center;
+    }
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .row input {
+        width: 100%;
+    }
+    .row button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-app {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    .header h2 {
+        font-size: 18px;
+    }
+    .row button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    .list-container li {
+        font-size: 14px;
+    }
+    .list-container li span {
+        font-size: 14px;
+    }
+}
